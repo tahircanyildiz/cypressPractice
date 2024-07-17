@@ -5,9 +5,9 @@ describe('first Test', () => {
         cy.url('eq','https://www.automationexercise.com/')
     });
     it('Second Test', () => {
-        cy.visit('https://www.automationexercise.com/')
+        cy.visit('https://tahircanyildiz.netlify.app/')
 
-        cy.title().should('eq','Automation Exercise')
+        cy.title().should('eq','Bilimsel Hesap Makinesi')
 
        
     });
