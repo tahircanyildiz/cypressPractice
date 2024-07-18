@@ -1,37 +1,29 @@
 describe('Login Test', () => {
     const user = {
-      username: 'user',
-      password: 'pass'
+        username: 'test',
+        password: 'test123'
     };
-  
-    it('should login successfully with valid credentials', () => {
-      // Giriş sayfasına git
-      cy.visit("https://tr-tr.facebook.com/");
-      
-    //   // Kullanıcı adı ve şifre alanlarını doldur
-       cy.get('input#email').type(user.username);
-       cy.get('input#pass').type(user.password);
-  
-      cy.get('input[value="Giriş Yap"]').click();
-      cy.visit("https://www.facebook.com/user");
-  
-    //   // Giriş işleminin başarılı olup olmadığını kontrol et
-      cy.url().should('include', '/user');
-      
+    it('Kayit Ol ve Giris Yap', () => {
+        // Giriş sayfasına git
+        cy.visit("https://todopurposeless.netlify.app/");
 
-    // it('should display error message on invalid credentials', () => {
-    //   // Giriş sayfasına git
-    //   cy.visit('/login');
-      
-    //   // Yanlış kullanıcı adı ve şifre gir
-    //   cy.get('input[name=username]').type('wronguser');
-    //   cy.get('input[name=password]').type('wrongpassword');
-  
-    //   // Giriş butonuna tıkla
-    //   cy.get('button[type=submit]').click();
-  
-    //   // Hata mesajının görüntülendiğini kontrol et
-    //   cy.get('.error-message').should('contain', 'Geçersiz kullanıcı adı veya şifre');
-    //
-     });
-  });
+        //kayıt ol
+        cy.get('div#auth span').click();
+        cy.get('input#register-username').type(user.username);
+        cy.get('input#register-password').type(user.password);
+        cy.get('div#register > button').click();
+
+        //giriş yap
+        cy.get('input#login-username').type(user.username);
+        cy.get('input#login-password').type(user.password);
+        cy.get('div#auth > button').click();
+
+        // to-do ekle
+        cy.get("input#new-todo").type("first todo");
+        cy.get("div#todo-app div.todo-input.todo-item > button > i").click();
+        cy.get("input#new-todo").type("second todo");
+        cy.get("div#todo-app div.todo-input.todo-item > button > i").click();
+    });
+
+
+});
