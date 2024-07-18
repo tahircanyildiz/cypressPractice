@@ -4,9 +4,6 @@ context('Actions', () => {
   beforeEach(() => {
     cy.visit('https://example.cypress.io/commands/actions')
   })
-
-  // https://on.cypress.io/interacting-with-elements
-
   it('.type() - type into a DOM element', () => {
     // https://on.cypress.io/type
     cy.get('.action-email').type('fake@email.com')
@@ -25,7 +22,7 @@ context('Actions', () => {
     // Delay each keypress by 0.1 sec
     cy.get('.action-email').type('slow.typing@email.com', { delay: 100 })
     cy.get('.action-email').should('have.value', 'slow.typing@email.com')
-
+    
     cy.get('.action-disabled')
       // Ignore error checking prior to type
       // like whether the input is visible or disabled

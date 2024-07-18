@@ -9,13 +9,14 @@ describe('Back Forward Kullanimi', () => {
    cy.go("back") // geri dön
    cy.title().should('eq', "Testing Frameworks for Javascript | Write, Run, Debug | Cypress")
 
-   cy.go("forward")
+   cy.go("forward") // ileri git
    cy.title().should('eq', "Scale Open-Source Testing with Cypress Cloud | Cypress Cloud Pricing")
 
-   cy.go(-1)
+   cy.go(-1) // geri dön
    cy.title().should('eq', "Testing Frameworks for Javascript | Write, Run, Debug | Cypress")
 
-
+   cy.go(1) // ileri git
+   cy.title().should('eq', "Scale Open-Source Testing with Cypress Cloud | Cypress Cloud Pricing")
 });
 
 
