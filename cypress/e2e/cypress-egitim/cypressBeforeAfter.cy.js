@@ -18,7 +18,7 @@ describe('Before Aftereach Kullanimi', () => {
         cy.log('BeforeEach Kullanimi - Cypress Test')
         cy.visit('https://automationexercise.com/')
     });
-
+ 
     afterEach(() => {
         cy.log('AfterEach Kullanimi icin bir ornek')
     });
