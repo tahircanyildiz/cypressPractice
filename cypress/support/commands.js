@@ -26,6 +26,7 @@
 
 import 'cypress-file-upload'
 require('cypress-delete-downloads-folder').addCustomCommand();
+require('cypress-delete-downloads-folder').addCustomCommand();
 
 import customCommandsLogin from "../pageObjectModel/customCommandsLogin"
 
