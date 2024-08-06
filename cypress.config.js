@@ -8,6 +8,9 @@ module.exports = defineConfig({
   e2e: {
     setupNodeEvents(on, config) {
          on('task', {removeDirectory })
+      },
+      env:{
+        hideXhr:true
       }
     }
 })
