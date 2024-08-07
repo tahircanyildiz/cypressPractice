@@ -44,6 +44,6 @@ Cypress.Commands.add('loginWithSession', (username, password) => {
         cy.get("input[placeholder = 'Email']").type(username)
         cy.get("input[placeholder = 'Password']").type(password)
         cy.get("button[type = 'submit']").click()
-        cy.get('nav > div > ul > li:nth-child(2) > a').should('be.visible').and('contain', 'New Post')
+        cy.get('div#main nav > div > ul > li:nth-child(2) > a').should('be.visible').and('contain', 'New Post')
     })
 })
