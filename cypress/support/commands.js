@@ -36,6 +36,17 @@ Cypress.Commands.add('login', (username, password) => {
     customCommandsLogin.loginBtn.click()
 })
 
+
+// pom commands challange kısmı
+
+import pomCustomCommands from "../pageObjectModel/loginPage"
+
+Cypress.Commands.add('loginchallange', (username, password) => {
+    pomCustomCommands.getEmailField.type(username)
+    pomCustomCommands.getPasswordField.type(password)
+    pomCustomCommands.getLoginButton.click()
+})
+
 // With Session
 Cypress.Commands.add('loginWithSession', (username, password) => {
     cy.session([username, password], () => {
